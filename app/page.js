@@ -11,13 +11,6 @@ export default async function Home() {
 
   return (
     <main className="min-h-screen flex items-center justify-center bg-gray-900 text-white px-4">
-    {isGoogleBot ? (
-      // ✅ Safe bot-friendly content (no cloaking)
-      <div className="text-center">
-        <h1 className="text-3xl font-semibold">Welcome to Our Website</h1>
-        <p className="mt-2 text-gray-300">This page contains information about our app.</p>
-      </div>
-    ) : (
       <div className="bg-gray-800 rounded-xl overflow-hidden shadow-2xl max-w-md w-full max-h-full flex flex-col">
 
         {/* Banner Image - Bigger with top padding */}
@@ -79,7 +72,6 @@ export default async function Home() {
           </div>
         </div>
       </div>
-  )}
     </main>
   );
 }

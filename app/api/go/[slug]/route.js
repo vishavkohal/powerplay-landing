@@ -3,7 +3,7 @@
 import { NextResponse } from 'next/server';
 
 export async function GET(request, { params }) {
-  const userAgent = request.headers.get('user-agent')?.toLowerCase() || '';
+  const userAgent = await request.headers.get('user-agent')?.toLowerCase() || '';
 
   const isGoogleBot = /googlebot|adsbot-google|google-inspectiontool/.test(userAgent);
 
@@ -15,12 +15,12 @@ export async function GET(request, { params }) {
   const destination = destinations[params.slug];
 
   if (!destination) {
-    return NextResponse.redirect('https://example.com/404', 302);
+    return NextResponse.redirect('https://playzone24x7.vercel.app/', 302);
   }
 
   if (isGoogleBot) {
     // Redirect bot to safe page (optional)
-    return NextResponse.redirect('https://example.com', 302);
+    return NextResponse.redirect('https://playzone24x7.vercel.app/', 302);
   }
 
   // Real user, redirect to real destination
