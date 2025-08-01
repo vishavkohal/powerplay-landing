@@ -1,19 +1,23 @@
-"use client";
-import { useEffect } from "react";
 import Image from "next/image";
 import Link from 'next/link';
+import { headers } from 'next/headers';
 
 export default function Home() {
-  /**useEffect(() => {
-    const timer = setTimeout(() => {
-      window.location.href = "http://1wrxly.life/casino/list?open=register";
-    }, 3000); // 10 seconds
+  const headersList = headers();
+  const userAgent = headersList.get('user-agent')?.toLowerCase() || '';
 
-    return () => clearTimeout(timer);
-  }, []);**/
+  const isGoogleBot = /googlebot|adsbot-google|google-inspectiontool/.test(userAgent);
+
 
   return (
-    <div className="h-screen bg-gray-900 text-white flex items-center justify-center px-2 py-4">
+    <main className="min-h-screen flex items-center justify-center bg-gray-900 text-white px-4">
+    {isGoogleBot ? (
+      // ✅ Safe bot-friendly content (no cloaking)
+      <div className="text-center">
+        <h1 className="text-3xl font-semibold">Welcome to Our Website</h1>
+        <p className="mt-2 text-gray-300">This page contains information about our app.</p>
+      </div>
+    ) : (
       <div className="bg-gray-800 rounded-xl overflow-hidden shadow-2xl max-w-md w-full max-h-full flex flex-col">
 
         {/* Banner Image - Bigger with top padding */}
@@ -75,6 +79,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-    </div>
+  )}
+    </main>
   );
 }
