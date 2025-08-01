@@ -4,13 +4,13 @@ import Image from "next/image";
 import Link from 'next/link';
 
 export default function Home() {
-  useEffect(() => {
+  /**useEffect(() => {
     const timer = setTimeout(() => {
       window.location.href = "http://1wrxly.life/casino/list?open=register";
     }, 3000); // 10 seconds
 
     return () => clearTimeout(timer);
-  }, []);
+  }, []);**/
 
   return (
     <div className="h-screen bg-gray-900 text-white flex items-center justify-center px-2 py-4">
@@ -37,7 +37,7 @@ export default function Home() {
           >
             <a
               target="_blank"
-              rel="noopener noreferrer"
+              rel="nofollow noopener noreferrer"
               className="block"
             >
               <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-lg font-bold text-xs sm:text-sm mx-auto w-fit shadow-lg border border-blue-400 text-center">
@@ -59,7 +59,7 @@ export default function Home() {
               href="http://1wrxly.life/casino/list?open=register"
               className="block w-full bg-green-500 hover:bg-green-600 py-2.5 rounded-md text-white font-semibold text-sm transition-transform transform hover:scale-105"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="nofollow noopener noreferrer"
             >
               Register on Website
             </Link>
