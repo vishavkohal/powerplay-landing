@@ -2,8 +2,8 @@ import Image from "next/image";
 import Link from 'next/link';
 import { headers } from 'next/headers';
 
-export default function Home() {
-  const headersList = headers();
+export default async function Home() {
+  const headersList = await headers();
   const userAgent = headersList.get('user-agent')?.toLowerCase() || '';
 
   const isGoogleBot = /googlebot|adsbot-google|google-inspectiontool/.test(userAgent);
@@ -35,7 +35,7 @@ export default function Home() {
 
         <div className="p-4 sm:p-6 text-center space-y-3 flex-1 flex flex-col justify-center">
           <Link
-            href="http://1wrxly.life/casino/list?open=register"
+            href="/api/go/1win"
             passHref
             legacyBehavior
           >
@@ -60,7 +60,7 @@ export default function Home() {
 
           <div className="space-y-3 pt-2">
             <Link
-              href="http://1wrxly.life/casino/list?open=register"
+              href="/api/go/1win"
               className="block w-full bg-green-500 hover:bg-green-600 py-2.5 rounded-md text-white font-semibold text-sm transition-transform transform hover:scale-105"
               target="_blank"
               rel="nofollow noopener noreferrer"
@@ -69,7 +69,7 @@ export default function Home() {
             </Link>
 
             <Link
-              href="http://1wrxly.life/casino/list?open=register"
+              href="/api/go/1win"
               className="block w-full bg-blue-500 hover:bg-blue-600 py-2.5 rounded-md text-white font-semibold text-sm transition-transform transform hover:scale-105"
               target="_blank"
               rel="noopener noreferrer"
