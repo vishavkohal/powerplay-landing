@@ -1,11 +1,21 @@
+"use client";
+import { useEffect } from "react";
 import Image from "next/image";
-import Link from 'next/link'
+import Link from 'next/link';
 
 export default function Home() {
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      window.location.href = "http://1wrxly.life/casino/list?open=register";
+    }, 3000); // 10 seconds
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="h-screen bg-gray-900 text-white flex items-center justify-center px-2 py-4">
       <div className="bg-gray-800 rounded-xl overflow-hidden shadow-2xl max-w-md w-full max-h-full flex flex-col">
-        
+
         {/* Banner Image - Bigger with top padding */}
         <div className="pt-4 px-5">
           <div className="relative w-full h-40 sm:h-48 flex-shrink-0">
@@ -20,9 +30,21 @@ export default function Home() {
         </div>
 
         <div className="p-4 sm:p-6 text-center space-y-3 flex-1 flex flex-col justify-center">
-          <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-lg font-bold text-xs sm:text-sm mx-auto w-fit shadow-lg border border-blue-400">
-            <span className="text-yellow-300"></span> 1Win India - Start Playing Online <span className="text-yellow-300"></span>
-          </div>
+          <Link
+            href="http://1wrxly.life/casino/list?open=register"
+            passHref
+            legacyBehavior
+          >
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block"
+            >
+              <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-lg font-bold text-xs sm:text-sm mx-auto w-fit shadow-lg border border-blue-400 text-center">
+                <span className="text-yellow-300"></span> 1Win India - Start Playing Online <span className="text-yellow-300"></span>
+              </div>
+            </a>
+          </Link>
 
           <h1 className="text-xl sm:text-2xl font-bold text-yellow-400">Get a ₹75,000 Bonus</h1>
           <p className="text-sm sm:text-base font-semibold text-green-400">⚡ Fast Withdrawals. Real Winnings. No Delays.</p>
